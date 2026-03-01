@@ -1,18 +1,44 @@
-# Baby-Project 
-BABI 4005 Assignment Project Part 1  
+# Video Game Sales Analysis & Platform Metadata Project
 
-## Purpose
-This project explores and prepares the Video Game Sales dataset for analysis. 
+## What This Project Is
 
-##Data Set:
-https://www.kaggle.com/datasets/gregorut/videogamesales/data
+For this project, I worked with a global video game sales dataset and improved it by adding extra platform information using pandas merges in Python.
+The original dataset shows how much each game sold in different regions, but it doesn’t tell you much about the actual console. So I created a second dataset with platform details (like manufacturer, console type, release year, and generation) and joined it to the main dataset. 
+
+The goal was to make the data more complete and better for analysis.
 
 
-## The dataset contains information about video games including:
-- Name
+## Dataset Used
+
+Video Game Sales Dataset (Kaggle):  
+https://www.kaggle.com/datasets/gregorut/videogamesales/data  
+
+The dataset includes:
+- Game name
 - Platform
 - Year
 - Genre
 - Publisher
-- Regional Sales (NA, EU, JP, Other)
-- Global Sales
+- Regional sales (NA, EU, JP, Other)
+- Global sales
+
+
+## What I Added
+
+I created a second dataset that includes:
+- Manufacturer (Sony, Microsoft, Nintendo, etc.)
+- Console type (Home, Handheld, PC)
+- Platform release year
+- Console generation
+
+This lets us analyze things like:
+- Which company performs better overall
+- Whether handheld or home consoles sell more
+- If newer generations perform differently
+
+## How I Joined the Data
+
+I used a **left join** in pandas:
+
+```python
+merged = pd.merge(vgsales, platform_meta, how="left", on="Platform")
