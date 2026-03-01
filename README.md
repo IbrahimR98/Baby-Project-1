@@ -42,3 +42,10 @@ I used a **left join** in pandas:
 
 ```python
 merged = pd.merge(vgsales, platform_meta, how="left", on="Platform")
+
+
+## Key Outcome
+
+The final merged dataset contains 16,598 rows and 15 columns.
+The left join preserved all original game records while adding console metadata.
+Some NA values appear when platform metadata did not exist for a key.
