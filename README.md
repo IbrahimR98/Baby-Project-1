@@ -40,7 +40,7 @@ This lets us analyze things like:
 
 I used a **left join** in pandas:
 
-```python
+
 merged = pd.merge(vgsales, platform_meta, how="left", on="Platform")
 
 
